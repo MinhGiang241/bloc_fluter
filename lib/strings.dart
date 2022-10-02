@@ -10,5 +10,6 @@ const loginErrorDialogContent =
 const pleaseWait = 'please wait ...';
 const enterYourPassword = 'Enter your password here';
 const enterYourEmail = 'Enter your email here';
+const login = 'login';
 const ok = 'Ok';
 const homePage = 'Home Page';

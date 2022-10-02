@@ -9,14 +9,16 @@ abstract class LoginApiProtocol {
 
 @immutable
 class LoginApi implements LoginApiProtocol {
-  const LoginApi._sharedInstance();
-  static const LoginApi _shared = LoginApi._sharedInstance();
-  factory LoginApi.instance() => _shared;
+  // singleton pattern
+  // const LoginApi._sharedInstance();
+  // static const LoginApi _shared = LoginApi._sharedInstance();
+  // factory LoginApi.instance() => _shared;
   @override
   Future<LoginHandle?> login(
       {required String email, required String password}) {
-    return Future.delayed(const Duration(seconds: 2),
-            () => email == 'foo@bar.com' && password == 'foobar')
-        .then((isLoggedIn) => isLoggedIn ? const LoginHandle.fooBar() : null);
+    return Future.delayed(
+      const Duration(seconds: 2),
+      () => email == 'foo@bar.com' && password == 'foobar',
+    ).then((isLoggedIn) => isLoggedIn ? const LoginHandle.fooBar() : null);
   }
 }
